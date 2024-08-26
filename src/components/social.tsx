@@ -1,4 +1,5 @@
 import { Coffee, Mail } from "lucide-react";
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -17,6 +18,11 @@ const itemList = [
     icon: <Mail className="h-6 w-6" />,
     link: "mailto:elvin.pjw@gmail.com",
     tooltip: "邮件联系",
+  },
+  {
+    icon: <SiGithub className="h-6 w-6" />,
+    link: "https://github.com/elvinn/bio",
+    tooltip: "Github",
   },
 ] as const;
 
