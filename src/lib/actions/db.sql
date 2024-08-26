@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS bio (
+  id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+  userId VARCHAR(255) NOT NULL,
+  merit VARCHAR(255),
+  bio TEXT,
+  ip VARCHAR(255),
+  createdAt BIGINT NOT NULL
+);
