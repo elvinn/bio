@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="theme-xhs">{children}</body>
       <Toaster />
+      <Analytics />
       <Script
         strategy="lazyOnload"
         src="https://www.googletagmanager.com/gtag/js?id=G-9VHJKHWEW8"
