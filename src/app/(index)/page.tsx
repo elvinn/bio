@@ -16,7 +16,7 @@ export default function Home() {
         <p className="border rounded-2xl py-1 px-4 text-slate-500 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out">
           已生成<b>上百次</b>
         </p>
-        <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-center text-primary">
+        <h1 className="sm:text-6xl text-4xl max-w-[708px] font-bold text-center text-primary !leading-tight">
           使用 AI 生成
           <br />
           你的个人专属介绍

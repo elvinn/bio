@@ -20,7 +20,7 @@ export default function BioCard({ className, bio, canCopy, ...props }: CardProps
         </CardTitle>
       </CardHeader>
       <CardContent className="grid gap-12">
-        <div className="whitespace-pre-line">{bio.content}</div>
+        <div className="whitespace-pre-line leading-relaxed">{bio.content}</div>
       </CardContent>
     </Card>
   );
