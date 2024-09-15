@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { headers } from "next/headers"
 import { cookies } from 'next/headers'
-import { Time } from "./consts";
+import { Time } from "../../lib/consts";
 
 export function getIp() {
   const forwardedFor = headers().get("x-forwarded-for");
@@ -28,6 +28,8 @@ export function getIp() {
 export function generateUserId() {
   const cookieStore = cookies();
   const userId = cookieStore.get('userId')?.value || uuidv4();
+  console.log(`cookieStore.get('userId')?.value`, cookieStore.get('userId')?.value);
+  console.log('userId ', userId);
   cookieStore.set({
     name: 'userId',
     value: userId!,
