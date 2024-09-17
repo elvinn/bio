@@ -1,14 +1,16 @@
-import Footer from '@/components/footer';
-import CreateSection from '@/components/create-section';
-import BioCard from '@/components/bio-card';
-import { bios } from '@/lib/consts';
-import Social from '@/components/social';
+import Footer from '@/components/footer'
+import CreateSection from '@/components/create-section'
+import BioCard from '@/components/bio-card'
+import { bios } from '@/lib/consts'
+import Social from '@/components/social'
 
 export default function Home() {
   return (
     <div className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <header className="flex justify-between items-center w-full mt-3 border-b-2 pb-4 sm:px-4 px-2">
-        <h1 className="sm:text-2xl text-xl font-bold text-primary">Bio 生成器</h1>
+        <h1 className="sm:text-2xl text-xl font-bold text-primary">
+          Bio 生成器
+        </h1>
         <Social />
       </header>
 
@@ -29,15 +31,12 @@ export default function Home() {
         <div className="flex flex-wrap gap-6 justify-center">
           {bios.map((bio, index) => (
             // 小屏幕全屏，大屏幕一行两个
-            <BioCard
-              className="w-full sm:w-2/5"
-              key={index} bio={bio}
-            />
+            <BioCard className="w-full sm:w-2/5" key={index} bio={bio} />
           ))}
         </div>
       </main>
 
       <Footer />
     </div>
-  );
+  )
 }

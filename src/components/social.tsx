@@ -1,30 +1,30 @@
-import { Coffee, Mail } from "lucide-react";
-import { SiGithub } from '@icons-pack/react-simple-icons';
-import { Button } from "@/components/ui/button";
+import { Coffee, Mail } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip'
 
 const itemList = [
   {
     icon: <Coffee className="h-6 w-6" />,
-    link: "https://buymeacoffee.com/elvinn",
-    tooltip: "Buy me a coffee",
+    link: 'https://buymeacoffee.com/elvinn',
+    tooltip: 'Buy me a coffee',
   },
   {
     icon: <Mail className="h-6 w-6" />,
-    link: "mailto:elvin.pjw@gmail.com",
-    tooltip: "邮件联系",
+    link: 'mailto:elvin.pjw@gmail.com',
+    tooltip: '邮件联系',
   },
   {
     icon: <SiGithub className="h-6 w-6" />,
-    link: "https://github.com/elvinn/bio",
-    tooltip: "Github",
+    link: 'https://github.com/elvinn/bio',
+    tooltip: 'Github',
   },
-] as const;
+] as const
 
 export default function Social() {
   return (
@@ -33,11 +33,7 @@ export default function Social() {
         <TooltipProvider key={item.link} delayDuration={400}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
-                href={item.link}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
+              <a href={item.link} rel="noopener noreferrer" target="_blank">
                 <Button variant="ghost" size="icon" aria-label={item.tooltip}>
                   {item.icon}
                 </Button>
@@ -50,5 +46,5 @@ export default function Social() {
         </TooltipProvider>
       ))}
     </div>
-  );
+  )
 }

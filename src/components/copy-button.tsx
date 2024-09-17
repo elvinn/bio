@@ -1,19 +1,19 @@
-"use client";
-import { Copy } from "lucide-react";
-import { toast } from "sonner";
-import { Button } from "@/components/ui/button";
+'use client'
+import { Copy } from 'lucide-react'
+import { toast } from 'sonner'
+import { Button } from '@/components/ui/button'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip'
 
 export default function CopyButton({ content }: { content: string }) {
   const handleCopy = () => {
-    navigator.clipboard.writeText(content);
-    toast("复制成功 🎉");
-  };
+    navigator.clipboard.writeText(content)
+    toast('复制成功 🎉')
+  }
 
   return (
     <TooltipProvider delayDuration={400}>
@@ -28,5 +28,5 @@ export default function CopyButton({ content }: { content: string }) {
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  );
+  )
 }

@@ -1,8 +1,8 @@
 export interface ActionError {
-  errorMessage: string;
+  errorMessage: string
 }
 
 export interface Bio {
-  title: string;
-  content: string;
+  title: string
+  content: string
 }

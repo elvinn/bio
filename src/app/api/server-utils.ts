@@ -1,20 +1,20 @@
-import { v4 as uuidv4 } from 'uuid';
-import { headers } from "next/headers"
+import { v4 as uuidv4 } from 'uuid'
+import { headers } from 'next/headers'
 import { cookies } from 'next/headers'
-import { Time } from "../../lib/consts";
+import { Time } from '../../lib/consts'
 
 export function getIp() {
-  const forwardedFor = headers().get("x-forwarded-for");
+  const forwardedFor = headers().get('x-forwarded-for')
   if (forwardedFor) {
-    return forwardedFor.split(",")[0].trim();
+    return forwardedFor.split(',')[0].trim()
   }
 
-  const ip = headers().get("x-real-ip");
+  const ip = headers().get('x-real-ip')
   if (ip) {
-    return ip;
+    return ip
   }
 
-  return '0.0.0.0';
+  return '0.0.0.0'
 }
 
 /**
@@ -26,16 +26,19 @@ export function getIp() {
  * @returns 返回生成或获取的用户ID
  */
 export function generateUserId() {
-  const cookieStore = cookies();
-  const userId = cookieStore.get('userId')?.value || uuidv4();
-  console.log(`cookieStore.get('userId')?.value`, cookieStore.get('userId')?.value);
-  console.log('userId ', userId);
+  const cookieStore = cookies()
+  const userId = cookieStore.get('userId')?.value || uuidv4()
+  console.log(
+    `cookieStore.get('userId')?.value`,
+    cookieStore.get('userId')?.value
+  )
+  console.log('userId ', userId)
   cookieStore.set({
     name: 'userId',
     value: userId!,
     httpOnly: true,
     maxAge: Time.MONTH,
-  });
+  })
 
-  return userId;
+  return userId
 }
